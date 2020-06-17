@@ -3,7 +3,7 @@ body{
 	color:#444;
 	overflow:hidden;
 	font:300 16px/18px Roboto, sans-serif;
-	background:url(https://img00.deviantart.net/6661/i/2017/069/8/2/mountain_grid___vaporwave_by_davidfigueira-db1ug68.jpg) #031b21 no-repeat center fixed;
+	/* background:url(https://img00.deviantart.net/6661/i/2017/069/8/2/mountain_grid___vaporwave_by_davidfigueira-db1ug68.jpg) #031b21 no-repeat center fixed; */
 	background-size:cover;
 }
 *,:after,:before{box-sizing:border-box}

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" >
 
+<div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+      <iframe frameborder="0" height="100%" width="100%"
+        src="https://youtube.com/embed/THpt6ugy_8E?autoplay=1&controls=0&showinfo=0&autohide=1">
+      </iframe>
+ </div>
+
 <head>
   <meta charset="UTF-8">
   <title>@benmwilson</title>
@@ -42,5 +48,66 @@
 
 
 </body>
+
+<script>
+  // Load the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // Replace the 'ytplayer' element with an <iframe> and
+  // YouTube player after the API code downloads.
+  var heroVideo;
+
+  function onYouTubePlayerAPIReady() {
+    heroVideo = new YT.Player('lp-pom-block-8-video-background-image', {
+      playerVars : {
+        loop: 1,
+        modestbranding: 1,
+        hd: 1,
+        rel: 0,
+        showinfo: 0,
+        controls: 0,
+        iv_load_policy: 3,
+        wmode: 'transparent',
+        autohide: 1,
+        autoplay: 1,
+        disablekb: 1,
+        fs: 1,
+        html5: 1,
+        enablejsapi: 1
+      },
+      videoId: 'mOKMoL8_jaQ'
+    });
+
+    // Hero Video Functionality
+    // *Sound Toggle*
+    $('#lp-pom-button-131').on('click', function() {
+      var isMuted = heroVideo.isMuted();
+      if (isMuted) {
+        heroVideo.unMute();
+      } else {
+        heroVideo.mute();
+      }
+    })
+
+    // *Play Toggle*
+    $('#lp-pom-button-132').on('click', function() {
+      var playerState = heroVideo.getPlayerState();
+      if (playerState == 2 || playerState == 0) {
+        heroVideo.playVideo();
+      } else if (playerState == 1) {
+        heroVideo.pauseVideo();
+      }
+    })
+  }
+
+</script>
+<script>
+  $(document).ready(function() {
+	$('#lp-pom-block-8-video-background-iframe').remove();
+  })
+</script>
 
 </html>
