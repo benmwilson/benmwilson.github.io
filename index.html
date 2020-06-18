@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" >
 
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -62,9 +61,9 @@ body {
 }
 </style>
 </head>
-<body>
 
-<video autoplay loop id="myVideo">
+<body>
+<video autoplay muted loop id="myVideo">
   <source src="bg.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
@@ -78,6 +77,8 @@ body {
 var video = document.getElementById("myVideo");
 var mum = document.getElementById("muteUnmute");
 var pp = document.getElementById("playPause");
+
+video.volume = 0.2;
 
 function playPause() {
   if (video.paused) {
@@ -99,12 +100,7 @@ function muteUnmute() {
   }
 }
 </script>
-
 </body>
-
-
-
-
 
 <head>
   <meta charset="UTF-8">
@@ -147,66 +143,4 @@ function muteUnmute() {
 
 
 </body>
-
-<script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var heroVideo;
-
-  function onYouTubePlayerAPIReady() {
-    heroVideo = new YT.Player('lp-pom-block-8-video-background-image', {
-      playerVars : {
-        loop: 1,
-        modestbranding: 1,
-        hd: 1,
-        rel: 0,
-        showinfo: 0,
-        controls: 0,
-        iv_load_policy: 3,
-        wmode: 'transparent',
-        autohide: 1,
-        autoplay: 1,
-        disablekb: 1,
-        fs: 1,
-        html5: 1,
-        enablejsapi: 1
-      },
-      videoId: 'mOKMoL8_jaQ'
-    });
-
-    // Hero Video Functionality
-    // *Sound Toggle*
-    $('#lp-pom-button-131').on('click', function() {
-      var isMuted = heroVideo.isMuted();
-      if (isMuted) {
-        heroVideo.unMute();
-      } else {
-        heroVideo.mute();
-      }
-    })
-
-    // *Play Toggle*
-    $('#lp-pom-button-132').on('click', function() {
-      var playerState = heroVideo.getPlayerState();
-      if (playerState == 2 || playerState == 0) {
-        heroVideo.playVideo();
-      } else if (playerState == 1) {
-        heroVideo.pauseVideo();
-      }
-    })
-  }
-
-</script>
-<script>
-  $(document).ready(function() {
-	$('#lp-pom-block-8-video-background-iframe').remove();
-  })
-</script>
-
 </html>
