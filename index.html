@@ -84,12 +84,14 @@
     <source src="" id="myVideo" type="video/mp4">
     <script>
       window.onload = function(event) {
-
-        document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 6) + 1).toString() + ".mp4";
-
+        document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
       }
     </script>
+
   </video>
+
+
+
 
   <div class="content">
     <button id="playPause" onclick="playPause()">Pause</button>
@@ -126,8 +128,10 @@
     }
 
     function newVid() {
-      document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 6) + 1).toString() + ".mp4";
+      document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
     }
+
+
 
   </script>
 </body>
