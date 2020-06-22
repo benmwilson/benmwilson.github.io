@@ -1,46 +1,175 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>@benmwilson</title>
-  
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+  <body>
+    <div class="video-container">
+      <video width=auto height=auto poster autoplay muted loop src="" id="myVideo" type="video/mp4">
+        <script>
+          window.onload = function(event) {
+            document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
+          }
 
-      <link rel="stylesheet" href="style.css">
+        </script>
 
-  
-</head>
+      </video>
+    </div>
 
-<body>
+    <div class="content">
+      <button id="playPause" onclick="playPause()">Pause</button>
+      <button id="muteUnmute" onclick="muteUnmute()">Mute</button>
+      <button id="muteUnmute" onclick="changeVid()">Change Video</button>
 
-  <div class="profile-card-wrap">
-	<input id="check" type="checkbox" class="check"><label for="check" class="toggle"> + </label>
-	<div class="content" data-text="Ben Matthew Wilson">
-		<div class="title">@benmwilson</div>
+    </div>
 
-		<p>I am a Java Programmer and Third Year Computer Science
-				Student at the University of British Columbia.</p>
-	</div>
-	<div class="link-info">
-		<div class="social">
-			<a class="link fb" href="https://www.facebook.com/benwilsonthehuman" target="_blank"><i class="fa fa-facebook"></i></a>
-			<a class="link li" href="https://www.linkedin.com/in/ben-matthew-wilson/" target="_blank"><i class="fa fa-linkedin"></i></a>
-			<a class="link ig" href="https://www.instagram.com/benmwilson/" target="_blank"><i class="fa fa-instagram"></i></a>
-			<a class="link gh" href="https://github.com/benmwilson" target="_blank"><i class="fa fa-github"></i></a>
-			<a class="link cl" href="http://cloud.benjimw.pw/index.php/login" target="_blank"><i class="fa fa-cloud-upload"></i></a>
-			<a class="link em" href="mailto:benwilsonthehuman@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
-		</div>
-		<div class="photo"></div>
-	</div>
-</div>
-  
-  
+    <script>
+      var video = document.getElementById("myVideo");
+      var mum = document.getElementById("muteUnmute");
+      var pp = document.getElementById("playPause");
+      var nv = document.getElementById("changeVid");
 
-</body>
+      video.volume = 0.2;
+
+      function playPause() {
+        if (video.paused) {
+          video.play();
+          pp.innerHTML = "Pause";
+        } else {
+          video.pause();
+          pp.innerHTML = "Play";
+        }
+      }
+
+      function muteUnmute() {
+        if (video.muted) {
+          video.muted = false;
+          mum.innerHTML = "Mute";
+        } else {
+          video.muted = true;
+          mum.innerHTML = "Ummute";
+        }
+      }
+
+      function changeVid() {
+        document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
+      }
+
+    </script>
+  </body>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>@benmwilson</title>
+
+    <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+    <div class="profile-card-wrap">
+      <input id="check" type="checkbox" class="check"><label for="check" class="toggle"> + </label>
+      <div class="content" data-text="Ben Matthew Wilson">
+        <div class="title">@benmwilson</div>
+
+        <p>I am a Java Programmer and Third Year Computer Science
+          Student at the University of British Columbia.</p>
+      </div>
+      <div class="link-info">
+        <div class="social">
+          <a class="link fb" href="https://www.facebook.com/benmwilson" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a class="link li" href="https://www.linkedin.com/in/ben-matthew-wilson/" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a class="link ig" href="https://www.instagram.com/benmwilson/" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a class="link gh" href="https://github.com/benmwilson" target="_blank"><i class="fa fa-github"></i></a>
+          <a class="link cl" href="https://www.buymeacoffee.com/benmwilson" target="_blank"><i class="fa fa-coffee"></i></a>
+          <a class="link em" href="mailto:benwilsonthehuman@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+
+  </body>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial;
+        font-size: 17px;
+      }
+
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .content {
+        position: fixed;
+        bottom: 0;
+        color: #f1f1f1;
+        width: 100%;
+        padding: 20px;
+      }
+
+      #playPause {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #playPause:hover {
+        background: rgba(0, 0, 0, .5);
+        color: #d6d6d6
+      }
+
+      #muteUnmute {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #muteUnmute:hover {
+        background: rgba(0, 0, 0, .5);
+        color: #d6d6d6
+      }
+
+      #changeVid {
+        width: 200px;
+        font-size: 18px;
+        padding: 10px;
+        border: none;
+        background: rgba(0, 0, 0, .5);
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #changeVid:hover {
+        background: rgba(0, 0, 0, .5);
+        color: #d6d6d6
+      }
+
+    </style>
+  </head>
 
 </html>
