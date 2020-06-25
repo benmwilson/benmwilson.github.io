@@ -3,57 +3,16 @@
 
   <body>
     <div class="video-container">
-      <video width=auto height=auto poster autoplay muted loop src="" id="myVideo" type="video/mp4">
-        <script>
+      <video width=auto height=auto poster autoplay muted loop src="bg/bg.mp4#t=7,442" id="myVideo" type="video/mp4">
+        <!-- <script>
           window.onload = function(event) {
             document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
           }
 
-        </script>
+        </script> -->
 
       </video>
     </div>
-
-    <div class="content">
-      <button id="playPause" onclick="playPause()">Pause</button>
-      <button id="muteUnmute" onclick="muteUnmute()">Mute</button>
-      <button id="muteUnmute" onclick="changeVid()">Change Video</button>
-
-    </div>
-
-    <script>
-      var video = document.getElementById("myVideo");
-      var mum = document.getElementById("muteUnmute");
-      var pp = document.getElementById("playPause");
-      var nv = document.getElementById("changeVid");
-
-      video.volume = 0.2;
-
-      function playPause() {
-        if (video.paused) {
-          video.play();
-          pp.innerHTML = "Pause";
-        } else {
-          video.pause();
-          pp.innerHTML = "Play";
-        }
-      }
-
-      function muteUnmute() {
-        if (video.muted) {
-          video.muted = false;
-          mum.innerHTML = "Mute";
-        } else {
-          video.muted = true;
-          mum.innerHTML = "Ummute";
-        }
-      }
-
-      function changeVid() {
-        document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
-      }
-
-    </script>
   </body>
 
   <head>
@@ -91,11 +50,51 @@
         <div class="photo"></div>
       </div>
     </div>
+    <div class="content">
+      <button id="playPause" onclick="playPause()">Pause</button>
+      <button id="muteUnmute" onclick="muteUnmute()">Mute</button>
+      <!-- <button id="muteUnmute" onclick="changeVid()">Change Video</button> -->
+    </div>
 
   </body>
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+      var video = document.getElementById("myVideo");
+      var mum = document.getElementById("muteUnmute");
+      var pp = document.getElementById("playPause");
+      var nv = document.getElementById("changeVid");
+
+      video.volume = 0.05;
+
+      function playPause() {
+        if (video.paused) {
+          video.play();
+          pp.innerHTML = "Pause";
+        } else {
+          video.pause();
+          pp.innerHTML = "Play";
+        }
+      }
+
+      function muteUnmute() {
+        if (video.muted) {
+          video.muted = false;
+          mum.innerHTML = "Mute";
+        } else {
+          video.muted = true;
+          mum.innerHTML = "Ummute";
+        }
+      }
+
+      function changeVid() {
+        document.getElementById("myVideo").src = "bg/" + (Math.floor(Math.random() * 13) + 1).toString() + ".mp4";
+      }
+
+    </script>
+
 
     <style>
       * {
